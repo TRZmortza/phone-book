@@ -2,6 +2,7 @@
 #include <iomanip>
 #include <conio.h>
 #define size 10
+std::string cls="cls";
 using namespace std;
 struct contacts
 {
@@ -83,6 +84,68 @@ for (int i = 0; i < size; i++)
     }
 }
 }
+
+void src(){
+string input;
+char answer;
+system("cls");
+cout<<"enter name\\last\\phone number:";
+cin>>input;
+
+for (int i = 0; i < size; i++)
+{   
+    if (find(i)!=-1)
+    {
+     liner();
+        if (input==Contacts[i].f_name)
+        {
+            system("cls");
+            cout<<"Same name found...\n";
+            display(i);
+            cout<<"Was it the intended person?(Y\\n)";
+            cin>>answer;
+            if (answer=='Y'||answer=='y')
+            {
+                break;
+            }else
+            continue;
+        }
+        if (input==Contacts[i].l_name)
+        {
+            system("cls");
+            cout<<"Same Last Name found...\n";
+            display(i);
+            cout<<"Was it the intended person?(Y\\n)";
+            cin>>answer;
+            if (answer=='Y'||answer=='y')
+            {
+                break;
+            }else
+            continue;
+        }
+        if (stoi(input)==Contacts[i].phone)
+        {
+            system("cls");
+            cout<<"Same number found...\n";
+            display(i);
+            cout<<"Was it the intended person?(Y\\n)";
+            cin>>answer;
+            if (answer=='Y'||answer=='y')
+            {
+                break;
+            }else
+            continue;
+        }
+        
+ 
+    }
+    system("cls");
+    
+}
+
+
+}
+
 int main()
 {
     int z,e;
@@ -102,7 +165,7 @@ int main()
                 insert(e);
             break;
         case 2://src
-            
+            src();
             break;
         case 3:
             /* code */
